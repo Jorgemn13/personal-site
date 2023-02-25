@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout>
+
+    <div class="pb-12 mt-5">
+      <div class="text-xl py-1">Hey there 👋</div>
+      <div class="text-5xl font-bold">I'm Jorge Mancilla</div>
+      <div class="py-2 mt-5">
+        <text class="text-lg">
+          Software Engineering student that builds stuff for fun. Currently working on mobile and web app for <a class="link" href="https://findlocalparts.com/" target="_blank">FindLocalParts.com</a>
+          </text
+        >
+      </div>
+      <div class="mt-8">
+        <a class="btn" href="/contact"> Let's connect!</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-2">My latest projects {"</>"}</div>
+    </div>
+
+    <HorizontalCard
+    title="JerryAI"
+    img="/Screenshot 2023-02-24 001253.jpg"
+    desc="Web app that uses Natural Language Processing to create legislative bills by analyzing and summarizing a proposed idea."
+    desc2="🏆 Project won 2nd place @ University of Minnesota Hackathon and we got free LG Ultrawide Monitors!"
+    url="https://github.com/unapt/JerryAI"
+    badge="NEW"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Vanadium"
+    img="/DALL·E 2023-02-24 00.36.31.png"
+    desc="Template built for hackathons. Utilizes NextJS, Typescript, and ChakraUI for the frontend. Python with FastAPI for the backend."
+    url="https://github.com/unapt/Vanadium"
+  />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+    title="LetsHike.tech"
+    img="/Screenshot 2023-02-24 001504.jpg"
+    desc="Web app that uses the National Park Service API to bring awareness to the sustainability of national parks."
+    desc2="😀 First hackathon! Built in 24 hours for University of Iowa Hackathon."
+    url="https://github.com/Jorgemn13/HackUIowaJJE"
+  />
+
+
+    <div>
+      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    </div>
+
+    {
+      last_posts.map((post) => (
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + post.slug}
+          target="_self"
+        />
+        <div class="divider my-0"></div>
+      ))
+    }
+
+</BaseLayout>

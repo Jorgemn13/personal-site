@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+---
+
+<BaseLayout title = "Projects">
+  <div>
+    <div class="text-3xl w-full font-bold mb-5">Software</div>
+  </div>
+
+  <HorizontalCard
+    title="JerryAI"
+    img="/Screenshot 2023-02-24 001253.jpg"
+    desc="Web app that uses Natural Language Processing to create legislative bills by analyzing and summarizing a proposed idea."
+    desc2="🏆 Project won 2nd place @ University of Minnesota Hackathon and we got free LG Ultrawide Monitors!"
+    url="https://github.com/unapt/JerryAI"
+    badge="NEW"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="LetsHike.tech"
+    img="/Screenshot 2023-02-24 001504.jpg"
+    desc="Web app that uses the National Park Service API to bring awareness to the sustainability of national parks."
+    desc2="😀 First hackathon! Built in 24 hours for University of Iowa Hackathon."
+    url="https://github.com/Jorgemn13/HackUIowaJJE"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Tools</div>
+  </div>
+
+  <HorizontalCard
+    title="Vanadium"
+    img="/DALL·E 2023-02-24 00.36.31.png"
+    desc="Template built for hackathons. Utilizes NextJS, Typescript, and ChakraUI for the frontend. Python with FastAPI for the backend."
+    url="https://github.com/unapt/Vanadium"
+  />
+</BaseLayout>
