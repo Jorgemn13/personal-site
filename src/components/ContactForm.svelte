@@ -3,7 +3,7 @@
     let senderContact = "";
     let senderSubject = "";
     let senderMessage = "";
-    let webhookURL = import.meta.env.PUBLIC_webhookURL;
+    let webhookURL = import.meta.env.PUBLIC_WEBHOOKURL;
 
     let formSuccess = "";
 
