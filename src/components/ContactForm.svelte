@@ -12,14 +12,12 @@
     async function handleOnSubmit() {
 		
         const webhookBody = {
+            username: "itsJorge.tech Form",
+            content: "@everyone",
+            allowed_mentions: { "parse": ["everyone"]},
             embeds: [{
                 title: 'Contact Form Submitted',
-                timestamp: new Date().toISOString,
-                footer: {
-                    text: "From: itsjorge.tech"
-                },
                 color: 15258703,
-
                 fields: [
                     {
                         name: 'Sender', value: senderContact
