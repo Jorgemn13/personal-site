@@ -16,39 +16,55 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <div class="text-3xl w-full font-bold">Education</div>
   </div>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
+  <div class="flow-root">
+    <ul class="-mb-8">
+      <TimeLineElement
       title="St. Cloud State University"
-      date="2022-2025"
-      subtitle="Bachelor's Degree, Software Engineering"
+      company="Bachelor's Degree, Software Engineering"
+      start="2022"
+      end="2025"
+      image="logos/scsu-logo.png"
     />
+
     <TimeLineElement
       title="Anoka Technical College"
-      date="2021-2022"
-      subtitle="Software Development"
+      company="Software Development"
+      start="2021"
+      end="2022"
+      image="logos/atc-logo.jpg"
+      _stopline={true}
     />
+    </ul>
   </div>
 
-  <div class="mb-5">
+  <div class="mb-5 mt-12">
     <div class="text-3xl w-full font-bold">Experience</div>
   </div>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="Blue Cross and Blue Shield of Minnesota"
-      date="Incoming"
-      subtitle="Software Development Intern"
-    />
-    <TimeLineElement
-      title="Egan Company"
-      date="May 2022-March 2023"
-      subtitle="Programmer Intern"
-      desc="Full-stack app development, working on applications to support various departments such as Accounting, IT, Safety, and field personnel"
-    />
-    
+  <div class="flow-root">
+    <ul class="-mb-8">
+      <TimeLineElement 
+      title="Incoming Software Development Intern"
+      company="Blue Cross and Blue Shield of Minnesota"
+      start="June 2023"
+      end="August 2023"
+      image="logos/bcbsmn-logo.png"
+    /> 
+
+    <TimeLineElement 
+      title="Programmer Intern"
+      company="Egan Company"
+      start="May 2022"
+      end="March 2023"
+      desc="ASP.NET MVC development on applications to support various departments such as Accounting, IT, Safety, and field personnel"
+      image="logos/eganco-logo.jpg"
+      _stopline= {true}
+    /> 
+
+    </ul>
   </div>
 
-  <div class="mb-5">
+  <div class="mb-5 mt-12">
     <div class="text-3xl w-full font-bold">Tools I've Used</div>
   </div>
 
